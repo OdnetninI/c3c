@@ -331,6 +331,7 @@ static void init_asm_x86(void)
 	reg_instr_clob("clc", rax_mask, NULL);
 	reg_instr_clob("cld", rax_mask, NULL);
 	reg_instr("clflush", "mem");
+	reg_instr("lock", NULL);
 	reg_instr("movb", "w:r8/mem, r8/mem/imm8");
 	reg_instr("movsbw", "w:r16/mem, r8/mem");
 	reg_instr("movzbw", "w:r16/mem, r8/mem");
