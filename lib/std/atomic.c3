@@ -139,7 +139,7 @@ module std::atomic;
  * @require types::is_int($typeof(*ptr)) || types::is_float($typeof(*ptr)) "Only integer/float pointers may be used."
  * @require $ordering != AtomicOrdering.NOT_ATOMIC && $ordering != AtomicOrdering.UNORDERED "Acquire ordering is not valid."
  **/
-macro fetch_add(ptr, y, AtomicOrdering $ordering = SEQ_CONSISTENT)
+macro fetch_add_generic(ptr, y, AtomicOrdering $ordering = SEQ_CONSISTENT)
 {
 	var $load_ordering = $ordering;
 	$if $ordering == RELEASE || $ordering == ACQUIRE_RELEASE:

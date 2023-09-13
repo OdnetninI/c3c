@@ -311,6 +311,11 @@ static void init_asm_x86(void)
 	reg_instr_clob("adcxl", cc_flag_mask, "r32, rw:r32/mem");
 	reg_instr_clob("adcxq", cc_flag_mask, "r64, rw:r64/mem");
 
+	reg_instr_clob("xaddb", cc_flag_mask, "rw:r8/mem, r8");
+	reg_instr_clob("xaddw", cc_flag_mask, "rw:r16/mem, r16");
+	reg_instr_clob("xaddl", cc_flag_mask, "rw:r32/mem, r32");
+	reg_instr_clob("xaddq", cc_flag_mask, "rw:r64/mem, r64");
+
 	reg_instr_clob("addb", cc_flag_mask, "rw:r8/mem, r8/mem/imm8");
 	reg_instr_clob("addw", cc_flag_mask, "rw:r16/mem, r16/mem/imm16/immi8");
 	reg_instr_clob("addl", cc_flag_mask, "rw:r32/mem, r32/mem/imm32/immi8");
@@ -353,6 +358,7 @@ static void init_asm_x86(void)
 	reg_instr("movawsw", AARG_R16 | AARG_IMM64, AARG_R16 | AARG_IMM64, 0); // Missing segment
 	reg_instr("movalsl", AARG_R32 | AARG_IMM64, AARG_R32 | AARG_IMM64, 0); // Missing segment
 	reg_instr("movaqsq", AARG_R64 | AARG_IMM64, AARG_R64 | AARG_IMM64, 0); // Missing segment*/
+	reg_instr("lock", NULL);
 	reg_instr("nop", NULL);
 	reg_instr("nopw", NULL);
 	reg_instr("nopl", NULL);
